@@ -1,4 +1,5 @@
 @extends('layouts.master-tabler')
 
-{{-- @section('content')
-@endsection --}}
+@section('content')
+	@livewire('master.barang')
+@endsection

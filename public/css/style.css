@@ -1,0 +1,13 @@
+.on-bottom {
+ 	display: flex;
+    flex: 0 0 50px;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 50px;
+    padding: 0 1rem;
+	bottom: 0;
+    left: 0;
+    /* position: fixed; */
+    right: 0;
+    z-index: 1032;
+}

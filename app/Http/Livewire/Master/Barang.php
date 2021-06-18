@@ -15,6 +15,11 @@ class Barang extends Component
     public $search;
     public $status = 1;
 
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
+
     public function render(BarangFarmasi $barangFarmasi)
     {
         $barangFarmasi = $barangFarmasi->getBarangFarmasi($this->search, $this->status, $this->limit);
