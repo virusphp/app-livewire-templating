@@ -1,4 +1,4 @@
-<footer class="footer on-bottom">
+<footer class="footer on-bottom fixed-bottom">
 	<div class="container">
 	  <div class="row text-center align-items-center flex-row-reverse">
 	   

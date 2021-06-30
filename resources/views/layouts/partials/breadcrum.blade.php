@@ -5,11 +5,12 @@
 		<div class="col">
 		  <!-- Page pre-title -->
 		  <div class="page-pretitle">
-			Overview
+			@if (session()->has('message'))
+				<div class="alert alert-success">
+					{{ session('message') }}
+				</div>
+			@endif
 		  </div>
-		  <h2 class="page-title">
-			Dashboard
-		  </h2>
 		</div>
 	  </div>
 	</div>

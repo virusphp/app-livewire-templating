@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Master;
+namespace App\Http\Livewire\Master\Barang;
 
 use App\Repositories\Master\Barang as BarangFarmasi;
 use Livewire\Component;
@@ -23,6 +23,6 @@ class Barang extends Component
     public function render(BarangFarmasi $barangFarmasi)
     {
         $barangFarmasi = $barangFarmasi->getBarangFarmasi($this->search, $this->status, $this->limit);
-        return view('livewire.master.barang', compact('barangFarmasi'));
+        return view('livewire.master.barang.barang', compact('barangFarmasi'));
     }
 }

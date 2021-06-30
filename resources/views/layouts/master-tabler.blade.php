@@ -16,7 +16,7 @@
     <!-- CSS files -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
-    @livewireStyle
+    @livewireStyles
   </head>
   <body class="antialiased">
     <div class="wrapper">
@@ -26,13 +26,8 @@
       @include('layouts.partials.navbar')
 
       <div class="page-wrapper mb-2">
-        @include('layouts.partials.breadcrum')
-
-        <div class="page-body">
-          <div class="container-xl">
-            @yield('content')
-          </div>
-        </div>
+      
+        @yield('content')
 
       </div>
       @include('layouts.partials.footer') 
@@ -43,6 +38,12 @@
     <!-- Tabler Core -->
     <script src="{{ mix('js/app.js') }}"></script>
     @livewireScripts
+    <script>
+      window.livewire.on('alert_remove',()=>{
+          setTimeout(function(){ $(".bg-success").fadeOut('fast');
+          }, 3000); // 3 secs
+      });
+    </script>
     @stack('scripts')
   </body>
 </html>

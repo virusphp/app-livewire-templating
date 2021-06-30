@@ -1,37 +1,208 @@
 <div class="modal modal-blur fade" id="modal-report" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog modal-xl" role="document">
+	<div class="modal-dialog modal-middle" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title">Barang Farmasi</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
-			<div class="mb-3">
-				<label class="form-label">Name</label>
-				<input type="text" class="form-control" name="example-text-input" placeholder="Your report name">
-			</div>
+				<div class="form-group mb-0 row">
+					<label class="form-label col-3 col-form-label">Nama Barang</label>
+					<div class="col">
+						<input type="text" class="form-control form-control-sm" placeholder="Nama Barang">
+						{{-- <small class="form-hint">We'll never share your email with anyone else.</small> --}}
+					</div>
+				</div>
+				<div class="form-group mb-0 row">
+					<label class="form-label col-3 col-form-label">Kelompok / Kategori</label>
+					<div class="col">
+						<input type="text" class="form-control form-control-sm" placeholder="Kelompok / Kategori">
+					</div>
+				</div>
+				<div class="form-group mb-0 row">
+					<label class="form-label col-3 col-form-label">Jenis Barang</label>
+					<div class="col">
+						<input type="text" class="form-control form-control-sm" placeholder="Jenis Barang">
+					</div>
+				</div>
+				<div class="form-group mb-0 row">
+					<label class="form-label col-3 col-form-label">Golongan Obat</label>
+					<div class="col">
+						<input type="text" class="form-control form-control-sm" placeholder="Golongan obat">
+					</div>
+				</div>
+				<div class="form-group mb-0 row">
+					<label class="form-label col-3 col-form-label">Pabrik</label>
+					<div class="col">
+						<input type="text" class="form-control form-control-sm" placeholder="Pabrik">
+					</div>
+				</div>
+				<div class="form-group mb-0 row">
+					<label class="form-label col-3 col-form-label">Generik (G/N)</label>
+					<div class="col">
+						<input type="text" class="form-control form-control-sm" placeholder="Generik (G/N)">
+					</div>
+				</div>
+				<div class="form-group mb-0 row">
+					<label class="form-label col-3 col-form-label">Formularium / Non</label>
+					<div class="col">
+						<input type="text" class="form-control form-control-sm" placeholder="Formularium/Non">
+					</div>
+				</div>
+				<div class="form-group mb-0 row">
+					<label class="form-label col-3 col-form-label">Dosis</label>
+					<div class="col">
+						<input type="text" class="form-control form-control-sm" placeholder="Dosis">
+					</div>
+				</div>
 			</div>
 			<div class="modal-body">
-			<div class="row">
-				<div class="col-lg-6">
-				<div class="mb-3">
-					<label class="form-label">Client name</label>
-					<input type="text" class="form-control">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="mb-3">
+							<label class="form-label"><span><b>Kemasan Barang Satuan Besar</b></span></label>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="mb-3">
+							<label class="form-label"><span><b>Kemasan Barang Satuan Kecil</b></span></label>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group mb-0 row">
+								<label class="form-label col-3">Satuan Besar</label>
+								<div class="col">
+									<input type="text" class="form-control form-control-sm" placeholder="Satuan besar">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group mb-0 row">
+								<label class="form-label col-3">Satuan Kecil</label>
+								<div class="col">
+									<input type="text" class="form-control form-control-sm" placeholder="Satuan kecil">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group mb-0 row">
+								<label class="form-label col-3">Harga Net Besar</label>
+								<div class="col">
+									<input type="text" class="form-control form-control-sm" placeholder="Harga net besar">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group mb-0 row">
+								<label class="form-label col-3">Harga Net Kecil</label>
+								<div class="col">
+									<input type="text" class="form-control form-control-sm" placeholder="Harga net kecil">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group mb-0 row">
+								<label class="form-label col-3">Diskon PBF Besar</label>
+								<div class="col">
+									<input type="text" class="form-control form-control-sm" placeholder="Diskon PBF besar">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group mb-0 row">
+								<label class="form-label col-3">Diskon PBF Kecil</label>
+								<div class="col">
+									<input type="text" class="form-control form-control-sm" placeholder="Diskon PBF kecil">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group mb-0 row">
+								<label class="form-label col-3">Harga Besar</label>
+								<div class="col">
+									<input type="text" class="form-control form-control-sm" placeholder="Harga besar">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group mb-0 row">
+								<label class="form-label col-3">Harga Kecil</label>
+								<div class="col">
+									<input type="text" class="form-control form-control-sm" placeholder="Harga kecil">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group mb-0 row">
+								<label class="form-label col-3">PPN Besar</label>
+								<div class="col">
+									<input type="text" class="form-control form-control-sm" placeholder="PPN Besar">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group mb-0 row">
+								<label class="form-label col-3">PPN Kecil</label>
+								<div class="col">
+									<input type="text" class="form-control form-control-sm" placeholder="PPN kecil">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group mb-0 row">
+								<label class="form-label col-3">Harga NET +PPN</label>
+								<div class="col">
+									<input type="text" class="form-control form-control-sm" placeholder="Harga NET PPN">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group mb-0 row">
+								<label class="form-label col-3">Harga NET +PPN</label>
+								<div class="col">
+									<input type="text" class="form-control form-control-sm" placeholder="Harga NET PPN">
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="form-group mb-0 row">
+						<label class="form-label col-3 col-form-label">Min Stok</label>
+						<div class="col">
+							<input type="text" class="form-control form-control-sm" placeholder="Nama Barang">
+						</div>
+					</div>
+					<div class="form-group mb-0 row">
+						<label class="form-label col-3 col-form-label">Lokasi Gudang</label>
+						<div class="col">
+							<input type="text" class="form-control form-control-sm" placeholder="Nama Barang">
+						</div>
+					</div>
+					<div class="form-group mb-0 row">
+						<label class="form-label col-3 col-form-label">Status Aktif</label>
+						<div class="col">
+							<input type="text" class="form-control form-control-sm" placeholder="Nama Barang">
+						</div>
+					</div>
+					<div class="form-group mb-0 row">
+						<label class="form-label col-3 col-form-label">Keterangan</label>
+						<div class="col">
+							<input type="text" class="form-control form-control-sm" placeholder="Nama Barang">
+						</div>
+					</div>
 				</div>
-				</div>
-				<div class="col-lg-6">
-				<div class="mb-3">
-					<label class="form-label">Reporting period</label>
-					<input type="date" class="form-control">
-				</div>
-				</div>
-				<div class="col-lg-12">
-				<div>
-					<label class="form-label">Additional information</label>
-					<textarea class="form-control" rows="3"></textarea>
-				</div>
-				</div>
-			</div>
 			</div>
 			<div class="modal-footer">
 			<a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">

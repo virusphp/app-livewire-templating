@@ -14,7 +14,7 @@
               </div>
               <div class="ms-auto text-muted">
                 <div class="ms-2 d-inline-block">
-                  @include('livewire.master.create-barang')
+                  @include('livewire.master.barang.create-barang')
                 </div>
               </div>
             </div>
@@ -61,3 +61,4 @@
         </div>
     </div>
 </div>
+@include('master.barang.modal-create')

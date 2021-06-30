@@ -19,4 +19,5 @@ Route::get('/', function () {
 
 Route::group(['namespace' => 'Master'], function() {
     Route::get('/barang', 'BarangController@index')->name('barang.index');
+    Route::get('/suplier', 'SuplierController@index')->name('suplier.index');
 });

@@ -1,5 +1,5 @@
 @extends('layouts.master-tabler')
 
 @section('content')
-	@livewire('master.barang')
+	@livewire('master.barang.barang')
 @endsection
