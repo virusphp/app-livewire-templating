@@ -11,4 +11,9 @@ class Suplier extends Model
 
     protected $connection = 'sqlsrv';
     protected $table = 'ap_suplier';
+    protected $primaryKey = 'kdsuplier';
+
+    protected $fillable = [
+        'kdsuplier','nmsuplier','alamat','telpon'
+    ];
 }

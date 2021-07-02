@@ -2,6 +2,7 @@
 
 namespace App\Repositories\Master;
 
+use App\Models\Suplier as AppSuplier;
 use DB;
 
 class Suplier
@@ -21,17 +22,34 @@ class Suplier
             ->paginate($page);
     }
 
-    public function postSuplier($nama, $alamat, $telepon, $kodeSuplier)
+    public function editSuplier($kodeSuplier)
     {
-        // dd($nama, $alamat, $telepon, $kodeSuplier);
         return DB::connection('sqlsrv')
             ->table('ap_suplier')
-            ->insert([
-                'kdsuplier' => $kodeSuplier,
-                'nmsuplier' => $nama,
-                'alamat' => $alamat,
-                'telpon' => $telepon
-            ]);
+            ->select('kdsuplier','nmsuplier','alamat','telpon')
+            ->where('kdsuplier', $kodeSuplier)
+            ->first();
+    }
+
+    public function postSuplier($data)
+    {
+        // return DB::connection('sqlsrv')
+        //     ->table('ap_suplier')
+        //     ->insert([
+        //         'kdsuplier' => $kodeSuplier,
+        //         'nmsuplier' => $nama,
+        //         'alamat' => $alamat,
+        //         'telpon' => $telepon
+        //     ]);
+        return AppSuplier::create($data);
+    }
+
+    public function updateSuplier($data)
+    {
+        $dataSuplier = AppSuplier::find($data['kdsuplier']);
+        unset($data['kdsuplier']);
+        return $dataSuplier->update($data);
+    
     }
 
     public function getNumberAuto()

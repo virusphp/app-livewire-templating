@@ -31,6 +31,9 @@
 					<a class="dropdown-item" href="{{ route('suplier.index') }}" >
 						Suplier
 					</a>
+					<a class="dropdown-item" href="{{ route('unit.index') }}" >
+						Unit
+					</a>
 					<div class="dropend">
 						<a class="dropdown-item dropdown-toggle" href="#sidebar-authentication" data-bs-toggle="dropdown" role="button" aria-expanded="false" >
 						Authentication

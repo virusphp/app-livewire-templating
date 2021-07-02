@@ -41,7 +41,7 @@
     <script>
       window.livewire.on('alert_remove',()=>{
           setTimeout(function(){ $(".bg-success").fadeOut('fast');
-          }, 3000); // 3 secs
+          }, 2000); // 2 secs
       });
     </script>
     @stack('scripts')

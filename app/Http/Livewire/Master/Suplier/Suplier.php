@@ -12,7 +12,8 @@ class Suplier extends Component
 
     protected $paginationTheme = 'bootstrap';
     protected $listeners = [
-        'suplierStore' => 'handleStore'
+        'suplierStore' => 'handleStore',
+        'suplierUpdate' => 'handleUpdate'
     ];
 
     public $limit = 10;
@@ -24,11 +25,24 @@ class Suplier extends Component
         return view('livewire.master.suplier.suplier', compact('suplier'));
     }
 
+    public function editSuplier($kodeSuplier, AppSuplier $suplier)
+    {
+        $suplier = $suplier->editSuplier($kodeSuplier);
+        $this->emit('editSuplier', $suplier);
+    }
+
     public function handleStore($suplier)
     {
-        session()->flash('message',' Created Successfully.');
+        session()->flash('message', $suplier['nmsuplier'].' Created Successfully.');
 
         $this->emit('alert_remove');
     }
 
+    public function handleUpdate($suplier)
+    {
+        session()->flash('message', $suplier['nmsuplier'].' Updated Successfully.');
+
+        $this->emit('alert_remove');
+
+    }
 }

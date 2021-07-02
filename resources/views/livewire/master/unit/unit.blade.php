@@ -10,23 +10,23 @@
         @endif 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Data Suplier </h3>
+            <h3 class="card-title">Data Unit </h3>
           </div>
           <div class="card-body border-bottom py-3">
             <div class="d-flex">
               <div class="text-muted">
                    Search:
                 <div class="mx-2 d-inline-block">
-                  <input wire:model="search" type="text" class="form-control form-control-sm" aria-label="Search Barang">
+                  <input wire:model="search" type="text" class="form-control form-control-sm" aria-label="Search Unit">
                 </div>
               </div>
               <div class="ms-auto text-muted">
                 <div class="ms-2 d-inline-block">
-                  <button type="button" class="btn btn-sm btn-primary" wire:click.prevent="$emit('showModal', null)">
+                  <button type="button" class="btn btn-sm btn-primary" wire:click.prevent="$emit('showModal')">
                     Tambah
                   </button>
                   {{-- Modal --}}
-                  @livewire('master.suplier.modal-suplier')
+                  {{-- @livewire('master.unit.-unit') --}}
 
                 </div>
               </div>
@@ -44,14 +44,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($suplier as $sup)    
+                    @foreach($units as $unit)    
                     <tr>
-                        <td>{{ $sup->kdsuplier }}</td>
-                        <td>{{ $sup->nmsuplier }}</td>
+                        <td>{{ $sup->kdunit }}</td>
+                        <td>{{ $sup->nmunit }}</td>
                         <td>{{ $sup->alamat }}</td>
                         <td>{{ $sup->telpon }}</td>
                         <td>
-                            <button wire:click.prevent="$emit('showModal', '{{ $sup->kdsuplier }}')" class="btn btn-sm btn-warning">Edit</button>
+                            <a href="javascript:;" class="btn btn-sm btn-warning">Edit</a>
                             <a href="javascript:;" class="btn btn-sm btn-danger">Hapus</a>
                         </td>
                     </tr>
@@ -60,8 +60,7 @@
             </table>
           </div>
           <div class="card-footer d-flex align-items-center">
-            {{-- {{ $barangFarmasi->count() }} {{ Str::plural('Item', $barangFarmasi->count()) }} --}}
-            {{ $suplier->links() }}
+            {{ $units->links() }}
           </div>
         </div>
     </div>
