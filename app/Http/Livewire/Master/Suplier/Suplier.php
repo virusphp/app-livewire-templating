@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Master\Suplier;
 
+use App\Models\Suplier as AppModelsSuplier;
 use App\Repositories\Master\Suplier as AppSuplier;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -25,12 +26,6 @@ class Suplier extends Component
         return view('livewire.master.suplier.suplier', compact('suplier'));
     }
 
-    public function editSuplier($kodeSuplier, AppSuplier $suplier)
-    {
-        $suplier = $suplier->editSuplier($kodeSuplier);
-        $this->emit('editSuplier', $suplier);
-    }
-
     public function handleStore($suplier)
     {
         session()->flash('message', $suplier['nmsuplier'].' Created Successfully.');
@@ -43,6 +38,17 @@ class Suplier extends Component
         session()->flash('message', $suplier['nmsuplier'].' Updated Successfully.');
 
         $this->emit('alert_remove');
-
     }
+
+    public function delete($kodeSuplier)
+    {
+        $suplier = AppModelsSuplier::find($kodeSuplier);
+
+        $suplier->delete();
+
+        session()->flash('message', $suplier->nmsuplier. ' Deleted Successfully');
+
+        $this->emit('alert_remove');
+    }
+
 }

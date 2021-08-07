@@ -64,5 +64,6 @@
 		 		block
 				@else
 				none
-				@endif;"></div>
+				@endif;">
+	</div>
 </div>

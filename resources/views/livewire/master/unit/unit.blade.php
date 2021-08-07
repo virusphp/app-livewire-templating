@@ -22,11 +22,11 @@
               </div>
               <div class="ms-auto text-muted">
                 <div class="ms-2 d-inline-block">
-                  <button type="button" class="btn btn-sm btn-primary" wire:click.prevent="$emit('showModal')">
+                  <button type="button" class="btn btn-sm btn-primary" wire:click.prevent="$emit('showModal', null)">
                     Tambah
                   </button>
                   {{-- Modal --}}
-                  {{-- @livewire('master.unit.-unit') --}}
+                  @livewire('master.unit.modal-unit')
 
                 </div>
               </div>
@@ -36,23 +36,19 @@
             <table class="table card-table table-vcenter text-nowrap datatable">
                 <thead>
                     <tr>
-                        <th> Kode Suplier</th>
-                        <th> Nama Suplier</th>
-                        <th> Alamat</th>
-                        <th> Telpon</th>
+                        <th> Kode Unit</th>
+                        <th> Nama Unit</th>
                         <th> Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($units as $unit)    
                     <tr>
-                        <td>{{ $sup->kdunit }}</td>
-                        <td>{{ $sup->nmunit }}</td>
-                        <td>{{ $sup->alamat }}</td>
-                        <td>{{ $sup->telpon }}</td>
+                        <td>{{ $unit->kdbagian }}</td>
+                        <td>{{ $unit->nmbagian }}</td>
                         <td>
-                            <a href="javascript:;" class="btn btn-sm btn-warning">Edit</a>
-                            <a href="javascript:;" class="btn btn-sm btn-danger">Hapus</a>
+                          <button wire:click.prevent="$emit('showModal', '{{ $unit->kdbagian }}')" class="btn btn-sm btn-warning">Edit</button>
+                          <button wire:click="delete('{{$unit->kdbagian}}')" class="btn btn-sm btn-danger">Delete</button>
                         </td>
                     </tr>
                     @endforeach

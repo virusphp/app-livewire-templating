@@ -10,14 +10,14 @@
         @endif 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Data Suplier </h3>
+            <h3 class="card-title">Data Satuan </h3>
           </div>
           <div class="card-body border-bottom py-3">
             <div class="d-flex">
               <div class="text-muted">
                    Search:
                 <div class="mx-2 d-inline-block">
-                  <input wire:model="search" type="text" class="form-control form-control-sm" aria-label="Search Barang">
+                  <input wire:model="search" type="text" class="form-control form-control-sm" aria-label="Search Unit">
                 </div>
               </div>
               <div class="ms-auto text-muted">
@@ -26,7 +26,7 @@
                     Tambah
                   </button>
                   {{-- Modal --}}
-                  @livewire('master.suplier.modal-suplier')
+                  @livewire('master.satuan.modal-satuan')
 
                 </div>
               </div>
@@ -36,23 +36,19 @@
             <table class="table card-table table-vcenter text-nowrap datatable">
                 <thead>
                     <tr>
-                        <th> Kode Suplier</th>
-                        <th> Nama Suplier</th>
-                        <th> Alamat</th>
-                        <th> Telpon</th>
+                        <th> Kode Satuan</th>
+                        <th> Nama Satuan</th>
                         <th> Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($suplier as $sup)    
+                    @foreach($satuans as $satuan)    
                     <tr>
-                        <td>{{ $sup->kdsuplier }}</td>
-                        <td>{{ $sup->nmsuplier }}</td>
-                        <td>{{ $sup->alamat }}</td>
-                        <td>{{ $sup->telpon }}</td>
+                        <td>{{ $satuan->idsatuan }}</td>
+                        <td>{{ $satuan->nmsatuan }}</td>
                         <td>
-                            <button wire:click.prevent="$emit('showModal', '{{ $sup->kdsuplier }}')" class="btn btn-sm btn-warning">Edit</button>
-                            <button wire:click="delete('{{$sup->kdsuplier}}')" class="btn btn-sm btn-danger">Delete</button>
+                          <button wire:click.prevent="$emit('showModal', '{{ $satuan->idsatuan }}')" class="btn btn-sm btn-warning">Edit</button>
+                          <button wire:click="delete('{{$satuan->idsatuan}}')" class="btn btn-sm btn-danger">Delete</button>
                         </td>
                     </tr>
                     @endforeach
@@ -60,8 +56,7 @@
             </table>
           </div>
           <div class="card-footer d-flex align-items-center">
-            {{-- {{ $barangFarmasi->count() }} {{ Str::plural('Item', $barangFarmasi->count()) }} --}}
-            {{ $suplier->links() }}
+            {{ $satuans->links() }}
           </div>
         </div>
     </div>
