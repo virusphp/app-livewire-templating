@@ -38,18 +38,6 @@
 						Satuan
 					</a>
 					<div class="dropend">
-						<a class="dropdown-item dropdown-toggle" href="#sidebar-authentication" data-bs-toggle="dropdown" role="button" aria-expanded="false" >
-						Authentication
-						</a>
-						<div class="dropdown-menu">
-						<a href="./sign-in.html" class="dropdown-item">Sign in</a>
-						<a href="./sign-up.html" class="dropdown-item">Sign up</a>
-						<a href="./forgot-password.html" class="dropdown-item">Forgot password</a>
-						<a href="./terms-of-service.html" class="dropdown-item">Terms of service</a>
-						<a href="./auth-lock.html" class="dropdown-item">Lock screen</a>
-						</div>
-					</div>
-					<div class="dropend">
 						<a class="dropdown-item dropdown-toggle" href="#sidebar-error" data-bs-toggle="dropdown" role="button" aria-expanded="false" >
 						Error pages
 						</a>

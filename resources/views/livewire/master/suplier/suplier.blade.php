@@ -3,9 +3,6 @@
         @if (session()->has('message')) 
         <div class="alert bg-success text-white rounded shadow-sm" role="alert">
           <strong>{{ session('message') }}!!</strong>
-          {{-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button> --}}
         </div>
         @endif 
         <div class="card">
@@ -61,7 +58,7 @@
           </div>
           <div class="card-footer d-flex align-items-center">
             {{-- {{ $barangFarmasi->count() }} {{ Str::plural('Item', $barangFarmasi->count()) }} --}}
-            {{ $suplier->links() }}
+            {{ $suplier->appends(['search' => 'search'])->render() }}
           </div>
         </div>
     </div>

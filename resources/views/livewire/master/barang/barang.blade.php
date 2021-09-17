@@ -1,5 +1,10 @@
 <div>
     <div class="col-12">
+       @if (session()->has('message')) 
+        <div class="alert bg-success text-white rounded shadow-sm" role="alert">
+          <strong>{{ session('message') }}!!</strong>
+        </div>
+        @endif 
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">Data Barang </h3>
