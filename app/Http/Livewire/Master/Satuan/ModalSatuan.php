@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Master\Satuan;
 
+use App\Models\Satuan as AppSatuan;
 use App\Repositories\Master\Satuan;
 use Livewire\Component;
 
@@ -68,5 +69,31 @@ class ModalSatuan extends Component
         $this->emit('satuanStore', $data); // Refresh 
 
         $this->doClose();
+    }
+
+    private function mapData($namaSatuan, $kodeSatuan)
+    {
+        return [
+            'idsatuan' => $kodeSatuan,
+            'nmsatuan' => $namaSatuan,
+        ];
+    }
+
+    private function getAutomatedCode()
+    {
+        $satuan = new Satuan();
+        $prefix = "SAT";
+        $maxNumber = trim($satuan->getNumberAuto());
+        if(!$maxNumber) {
+            $start = 1;
+            $noUrut = $prefix . sprintf("%04s", $start);
+
+            return $noUrut;
+        }
+
+        $noUrut = (int) substr($maxNumber, -4);
+        $noUrut++;
+        $newNoUrut = $prefix. sprintf("%04s", $noUrut);
+        return $newNoUrut;
     }
 }

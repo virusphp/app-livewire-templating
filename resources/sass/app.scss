@@ -1,17 +1,18 @@
 // Fonts
-// @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-// @import 'variables';
+@import 'variables';
 
 // Bootstrap
-// @import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/scss/bootstrap';
 
 // Icons
-// @import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import '~simple-line-icons/css/simple-line-icons.css';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 
 // Coreui
-@import '~@tabler/core/dist/css/tabler.min.css';
-@import '~@tabler/core/dist/css/tabler-flags.min.css';
-@import '~@tabler/core/dist/css/tabler-payments.min.css';
-@import '~@tabler/core/dist/css/tabler-vendors.min.css';
+@import '~@coreui/coreui/dist/css/coreui.min.css';
+
+// styles
+// @import 'styles.scss'

@@ -1,69 +1,87 @@
 <div>
-    <div class="col-12">
-       @if (session()->has('message')) 
-        <div class="alert bg-success text-white rounded shadow-sm" role="alert">
-          <strong>{{ session('message') }}!!</strong>
-        </div>
-        @endif 
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">Data Barang </h3>
-          </div>
-          <div class="card-body border-bottom py-3">
-            <div class="d-flex">
-              <div class="text-muted">
-                   Search:
-                <div class="mx-2 d-inline-block">
-                  <input wire:model="search" type="text" class="form-control form-control-sm" aria-label="Search Barang">
-                </div>
-              </div>
-              <div class="ms-auto text-muted">
-                <div class="ms-2 d-inline-block">
-                  @include('livewire.master.barang.create-barang')
-                </div>
-              </div>
+    <div class="row">
+        <div class="col-lg-12">
+            @if (session()->has('message')) 
+            <div class="alert bg-success text-white rounded shadow-sm" role="alert">
+              <strong>{{ session('message') }}!!</strong>
             </div>
-          </div>
-          <div class="table-responsive">
-            <table class="table card-table table-vcenter text-nowrap datatable">
-              <thead>
-                <tr>
-                    <th> Kode Barang</th>
-                    <th> Nama Barang</th>
-                    <th> Satuan Besar</th>
-                    <th> Isi</th>
-                    <th> Satuan Kecil</th>
-                    <th> Harga Besar</th>
-                    <th> Harga Netto</th>
-                    <th> Dosis</th>
-                    <th> Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                @foreach($barangFarmasi as $barang)
-                <tr>
-                    <td> {{ $barang->kd_barang }} </td>
-                    <td> {{ $barang->nama_barang }} </td>
-                    <td> {{ $barang->kd_satuan_besar }} </td>
-                    <td> {{ $barang->isi_satuan_besar }} </td>
-                    <td> {{ $barang->kd_satuan_kecil }} </td>
-                    <td> {{ money_to_dec($barang->harga_satuan_besar) }} </td>
-                    <td> {{ money_to_dec($barang->harga_satuan_netto) }} </td>
-                    <td> {{ $barang->dosis }} </td>
-                    <td>
-                        <a href="javascript:;" class="btn btn-sm btn-warning">Edit</a>
-                        <a href="javascript:;" class="btn btn-sm btn-danger">Hapus</a>
-                    </td>
-                </tr>
-                @endforeach
-              </tbody>
-            </table>
-          </div>
-          <div class="card-footer d-flex align-items-center">
-            {{-- {{ $barangFarmasi->count() }} {{ Str::plural('Item', $barangFarmasi->count()) }} --}}
-            {{ $barangFarmasi->links() }}
-          </div>
+            @endif 
+            <div class="card rounded-lg">
+                <div class="card-header d-flex-align-items-center pb-0">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item float-left">
+                            <h4> Barang</h4>
+                        </li>
+                        <li class="list-inline-item float-right">
+                            <div class="d-none d-md-block">
+                                <a disabled href="x" class="btn btn-sm btn-primary mb-3 mr-auto">
+                                    <i class="c-icon fa fa-plus"></i>
+                                    Barang
+                                </a>
+                            </div>
+                            <div class="d-md-none float-right">
+                                <a disabled href="x" class="btn btn-sm btn-primary mb-3">
+                                    <i class="fas fa-plus"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="d-flex float-right">
+                                <div class="form-group my-2 mx-2">
+                                    <div class="controls">
+                                        <div class="input-group">
+                                            <input class="form-control form-control-sm" wire:model="search" size="16" type="text">
+                                            <span class="input-group-append">
+                                                <button id="cari-button" class="btn btn-sm btn-secondary" type="button">Go!</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <table id="tabel-registrasi" class="table table-sm table-hover table-responsive-sm table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>KODE BARANG</th>
+                                    <th>NAMA BARANG</th>
+                                    <th>SATUAN BESAR</th>
+                                    <th>SATUAN KECIL</th>
+                                    <th>HARGA SATUAN BESAR</th>
+                                    <th>HARGA SATUAN KECIL</th>
+                                    <th>ISI SATUAN</th>
+                                    <th>DOSIS</th>
+                                    <th class="text-right">AKSI</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($barangFarmasi as $barang)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>   
+                                    <td>{{ $barang->kd_barang }}</td>   
+                                    <td>{{ $barang->nama_barang }}</td>   
+                                    <td>{{ $barang->kd_satuan_besar }}</td>   
+                                    <td>{{ $barang->kd_satuan_kecil }}</td>   
+                                    <td>{{ $barang->harga_satuan_besar }}</td>   
+                                    <td>{{ $barang->harga_satuan_netto }}</td>   
+                                    <td>{{ $barang->isi_satuan_besar }}</td>   
+                                    <td>{{ $barang->dosis }}</td>   
+                                    <td>
+                                        <button class="btn btn-sm btn-danger">Delete</button>     
+                                    </td>   
+                                </tr> 
+                                @endforeach
+                            </tbody>
+                            </table>
+                            {{ $barangFarmasi->appends(['search' => 'search'])->render() }}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 @include('master.barang.modal-create')
+</div>

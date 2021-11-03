@@ -9,6 +9,8 @@ class Satuan extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $connection = 'sqlsrv';
 
     protected $table = "ap_satuan";

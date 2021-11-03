@@ -20,10 +20,13 @@
         "sass-loader": "^12.1.0"
     },
     "dependencies": {
+        "@coreui/coreui": "^4.0.5",
         "@fortawesome/fontawesome-free": "^5.15.3",
         "@popperjs/core": "^2.9.2",
         "@tabler/core": "*",
+        "bootstrap": "*",
         "jquery": "^3.6.0",
-        "popper.js": "^1.16.1"
+        "popper.js": "^1.16.1",
+        "simple-line-icons": "^2.5.5"
     }
 }

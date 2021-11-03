@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Master;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Controllers\BackendController;
 
-class SatuanController extends Controller
+class SatuanController extends BackendController
 {
     public function index()
     {
-        return view('master.satuan.index');
+        $bcrum = $this->bcrum('Pendaftaran Pasien Baru');
+        return view('master.satuan.index', compact('bcrum'));
     }
 }

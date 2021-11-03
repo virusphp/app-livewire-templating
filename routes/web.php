@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
+Route::get('/', 'DashboardController@index');
 
 Route::group(['namespace' => 'Master'], function() {
     Route::get('/barang', 'BarangController@index')->name('barang.index');
